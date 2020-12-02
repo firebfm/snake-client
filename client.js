@@ -13,7 +13,7 @@ const connect = function() {
     conn.write("Name: SYH");
     // setInterval(() => {
     //   conn.write("Move: up")
-    // }, 100);
+    // }, 50);
   });
 
   conn.on('data', (data) => {
