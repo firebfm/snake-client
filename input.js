@@ -4,12 +4,12 @@
  */
 
  // handleUserInput callback
-// const handleUserInput = function(key) {
-//   if (key === '\u0003') {
-//     console.log('Exit! Bye!');
-//     process.exit();
-//   }
-// }
+const handleUserInput = function(key) {
+  if (key === '\u0003') {
+    console.log('Exit! Bye!');
+    process.exit();
+  }
+}
 
 const setupInput = function() {
   const stdin = process.stdin;
@@ -17,12 +17,7 @@ const setupInput = function() {
   stdin.setEncoding('utf8');
   stdin.resume();
   stdin.on('data', (key) => {
-    const handleUserInput = function() {
-      // ctrl-c exit
-      if (key === '\u0003') {
-        process.exit();
-      }
-    };
+    handleUserInput(key)
   });
   return stdin;
 };
