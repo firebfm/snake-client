@@ -3,6 +3,8 @@
  * Specifically, so that we can handle user input via stdin
  */
 
+const { connect } = require("http2");
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -20,8 +22,14 @@ const handleUserInput = function(key) {
     connection.write('Move: down');
   } else if (key === 'd') {
     connection.write('Move: right');
+  } else if (key === 'h') {
+    connection.write('Say: howdy all...')
+  } else if (key === 'f') {
+    connection.write('Say: follow me')
+  } else if (key === 'i') {
+    connection.write('Say: I"m confused')
   }
-}
+};
 
 const setupInput = function(conn) {
   connection = conn;
